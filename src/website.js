@@ -22,8 +22,8 @@ function createNav() {
     homeButton.classList.add('button-nav');
     homeButton.textContent = "Home";
     homeButton.addEventListener('click', (e) => {
-        if (e.target.classList.contains('active')) return;
-        setActiveButton(homeButton);
+        if (e.target.classList.contains('active')) return; // if the button is already active, do nothing
+        setActiveButton(homeButton); 
         loadHome();
     });
 
@@ -55,7 +55,7 @@ function createNav() {
 function setActiveButton(button) {
     const buttons = document.querySelectorAll('.button-nav');
     buttons.forEach((button) =>{
-        if (button !== this){
+        if (button !== this){// if the button is not the one that was clicked
             button.classList.remove('active');
         }
     });
